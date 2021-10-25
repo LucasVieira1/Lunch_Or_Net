@@ -15,13 +15,13 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 *  Java
 *  SQL
 
-## :👨‍💻 Integrantes da Equipe 
+## 👨‍💻 Integrantes da Equipe 
 
 * **Luiz Agêo** - *Scrum Master* - https://github.com/AgeoBrito
 * **Jackeline Lemos** - *Product Owner* - https://github.com/JackelineLemos
 * **Lucas Vieira** - *Testador* - https://github.com/LucasVieira1
 * **Mateus de Queiroz** - *Projetista* - https://github.com/MQuerioz
-* **Samuel Santos** - *implementador* - https://github.com/Sam-S-Pina
-* **Victor Augusto** - *Analítico* - https://github.com/linkParaPerfil-NeyDay
+* **Samuel Santos** - *Implementador* - https://github.com/Sam-S-Pina
+* **Victor Augusto** - *Analítico* - https://github.com/vict0raugst
 
 

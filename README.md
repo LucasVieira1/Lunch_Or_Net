@@ -21,7 +21,7 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 * **Jackeline Lemos** - *Product Owner* - https://github.com/JackelineLemos
 * **Lucas Vieira** - *Projetista* - https://github.com/LucasVieira1
 * **Mateus de Queiroz** - *Testador* - https://github.com/MQuerioz
-* **Samuel Santos** - *Desenvolvedor* - https://github.com/Sam-S-Pina
+* **Samuel Santos** - *implementador* - https://github.com/Sam-S-Pina
 * **Victor Augusto** - *Analítico* - https://github.com/linkParaPerfil-NeyDay
 
 

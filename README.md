@@ -1,95 +1,27 @@
-# Título do projeto
+# :falafel: Lunch Or Net :hamburger:
+Somos uma equipe inovadora com o objetivo de implantar uma nova maneira de self-service, nosso aplicativo visa o melhor atendimento e usabilidade ao cliente. Nosso diferencial visa a possibilidade de escolha pelo usuário, podendo variar entre almoço ou lanche personalizado. Quer conhecer nosso trabalho?
 
-Um parágrafo da descrição do projeto vai aqui
+## :dart:Objetivo
+Para clientes interessados em self-service, que desejam servir-se sem sair de sua residência, a Lunch or Net é uma proposta que visa atender as necessidades dos clientes, de acordo com a sua preferência. Ao invés dos restaurantes convencionais com pratos feitos, nosso produto possibilita escolhas personalizadas e adaptáveis.
+##  :desktop_computer:  Arquitetura de Software no Desenvolvimento
 
-## 🚀 Começando
-
-Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
-
-Consulte **Implantação** para saber como implantar o projeto.
-
-### 📋 Pré-requisitos
-
-De que coisas você precisa para instalar o software e como instalá-lo?
-
-```
-Dar exemplos
-```
-
-### 🔧 Instalação
-
-Uma série de exemplos passo-a-passo que informam o que você deve executar para ter um ambiente de desenvolvimento em execução.
-
-Diga como essa etapa será:
-
-```
-Dar exemplos
-```
-
-E repita:
-
-```
-Até finalizar
-```
-
-Termine com um exemplo de como obter dados do sistema ou como usá-los para uma pequena demonstração.
-
-## ⚙️ Executando os testes
-
-Explicar como executar os testes automatizados para este sistema.
-
-### 🔩 Analise os testes de ponta a ponta
-
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-### ⌨️ E testes de estilo de codificação
-
-Explique que eles verificam esses testes e porquê.
-
-```
-Dar exemplos
-```
-
-## 📦 Desenvolvimento
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
+*  Figma - Design
+* Netbeans - Front e Back.
+* MySQL - Banco de dados. 
+* Jira - Quadro Scrum
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
+*  Java
+*  SQL
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O framework web usado
-* [Maven](https://maven.apache.org/) - Gerente de Dependência
-* [ROME](https://rometools.github.io/rome/) - Usada para gerar RSS
+## :👨‍💻 Integrantes da Equipe 
 
-## 🖇️ Colaborando
+* **Luiz Agêo** - *Scrum Master* - https://github.com/AgeoBrito
+* **Jackeline Lemos** - *Product Owner* - https://github.com/JackelineLemos
+* **Lucas Vieira** - *Projetista* - https://github.com/LucasVieira1
+* **Mateus de Queiroz** - *Testador* - https://github.com/MQuerioz
+* **Samuel Santos** - *Desenvolvedor* - https://github.com/Sam-S-Pina
+* **Victor Augusto** - *Analítico* - https://github.com/linkParaPerfil-NeyDay
 
-Por favor, leia o [COLABORACAO.md](https://gist.github.com/usuario/linkParaInfoSobreContribuicoes) para obter detalhes sobre o nosso código de conduta e o processo para nos enviar pedidos de solicitação.
 
-## 📌 Versão
-
-Nós usamos [SemVer](http://semver.org/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](https://github.com/suas/tags/do/projeto). 
-
-## ✒️ Autores
-
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início
-
-* **Um desenvolvedor** - *Trabalho Inicial* - [umdesenvolvedor](https://github.com/linkParaPerfil)
-* **Fulano De Tal** - *Documentação* - [fulanodetal](https://github.com/linkParaPerfil)
-
-Você também pode ver a lista de todos os [colaboradores](https://github.com/usuario/projeto/colaboradores) que participaram deste projeto.
-
-## 📄 Licença
-
-Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
-
-## 🎁 Expressões de gratidão
-
-* Conte a outras pessoas sobre este projeto 📢
-* Convide alguém da equipe para uma cerveja 🍺 
-* Obrigado publicamente 🤓.
-* etc.

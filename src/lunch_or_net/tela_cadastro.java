@@ -5,13 +5,11 @@
  */
 package lunch_or_net;
 
-import lunch_or_net.tela_login_senha;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import dao.UsuarioDAO;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
-
 
 /**
  *
@@ -24,13 +22,13 @@ public class tela_cadastro extends javax.swing.JFrame {
      */
     public tela_cadastro() {
         initComponents();
-        txtusuario.setBackground(new Color(0,0,0,0));
-        txtemail.setBackground(new Color(0,0,0,0));
-        txtsenha.setBackground(new Color(0,0,0,0));
-        txtconfirmar.setBackground(new Color(0,0,0,0));
-        btnconcordo.setBackground(new Color(0,0,0,0));
-        btnregistrar.setBackground(new Color(0,0,0,0));
-        btnvoltar2.setBackground(new Color(0,0,0,0));
+        txtusuario.setBackground(new Color(0, 0, 0, 0));
+        txtemail.setBackground(new Color(0, 0, 0, 0));
+        txtsenha.setBackground(new Color(0, 0, 0, 0));
+        txtconfirmar.setBackground(new Color(0, 0, 0, 0));
+        btnconcordo.setBackground(new Color(0, 0, 0, 0));
+        btnregistrar.setBackground(new Color(0, 0, 0, 0));
+        btnvoltar2.setBackground(new Color(0, 0, 0, 0));
     }
 
     /**
@@ -120,9 +118,9 @@ public class tela_cadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnvoltar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltar2ActionPerformed
-tela_login_senha voltar = new tela_login_senha();
-voltar.setVisible(true); 
-dispose();
+        tela_login_senha voltar = new tela_login_senha();
+        voltar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnvoltar2ActionPerformed
 
     private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
@@ -134,31 +132,29 @@ dispose();
         Usuario usuarios = new Usuario();
         usuarios.setNome(txtusuario.getText());
         usuarios.setEmail(txtemail.getText());
-        usuarios.setSenha(txtsenha.getText());
-        usuarios.setConfirmar(txtconfirmar.getText());
+        usuarios.setSenha(String.valueOf(txtsenha.getPassword()));
+        usuarios.setConfirmar(String.valueOf(txtconfirmar.getPassword()));
 
         // fazendo a validação dos dados
-        if ((txtusuario.getText().isEmpty()) || (txtsenha.getText().isEmpty()) || (txtconfirmar.getText().isEmpty())) {
+        if ((txtusuario.getText().isEmpty()) || (txtsenha.getPassword().length == 0) || (txtconfirmar.getPassword().length == 0)) {
             JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
             txtsenha.setText("");
             txtconfirmar.setText("");
-        }
-        else if(!txtconfirmar.getText().equals(txtsenha.getText())){
-            JOptionPane.showMessageDialog(null, "As senhas não coincidem!");
-            txtsenha.setText("");
-            txtconfirmar.setText("");
-        }
-        else {
+        } else if (new String(txtconfirmar.getPassword()).equals(new String(txtsenha.getPassword()))) {
 
             // instanciando a classe UsuarioDAO do pacote dao e criando seu objeto dao
             UsuarioDAO dao = new UsuarioDAO();
-            dao.adiciona(usuarios);
-            int a = JOptionPane.showConfirmDialog(null,"Usuário "+txtusuario.getText()+ " cadastrado com sucesso!\n Fazer login?","Registro", JOptionPane.OK_CANCEL_OPTION);
-            if(a == JOptionPane.OK_OPTION){
+            dao.insert(usuarios);
+            int a = JOptionPane.showConfirmDialog(null, "Usuário " + txtusuario.getText() + " cadastrado com sucesso!\n Fazer login?", "Registro", JOptionPane.OK_CANCEL_OPTION);
+            if (a == JOptionPane.OK_OPTION) {
                 tela_login_senha voltar = new tela_login_senha();
                 voltar.setVisible(true);
                 dispose();
             }
+        } else {
+            JOptionPane.showMessageDialog(null, "As senhas não coincidem!");
+            txtsenha.setText("");
+            txtconfirmar.setText("");
         }
 
     }//GEN-LAST:event_btnregistrarActionPerformed

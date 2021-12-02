@@ -1,6 +1,6 @@
 package modelo;
 public class Usuario {
-    Long id;
+    String id;
     String nome;
     String email;
     String senha;
@@ -18,10 +18,10 @@ public class Usuario {
         this.senha = email;
 
     }
-    public Long getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     } 
     public String getNome() { 
@@ -38,4 +38,6 @@ public class Usuario {
         
     } 
 
+    
+    
 }

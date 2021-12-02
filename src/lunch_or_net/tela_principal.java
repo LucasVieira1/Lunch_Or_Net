@@ -5,6 +5,7 @@
  */
 package lunch_or_net;
 
+import lunch_or_net.tela_carrinho;
 import java.awt.Color;
 
 /**
@@ -19,10 +20,9 @@ public class tela_principal extends javax.swing.JFrame {
     public tela_principal() {
         initComponents();
 
-        btnalmoco.setBackground(new Color(0,0,0,0));
-        btnlanche.setBackground(new Color(0,0,0,0));
-      btncarrinho.setBackground(new Color(0,0,0,0));
-        
+        //btnalmoco.setBackground(new Color(0, 0, 0, 0));
+        // btnlanche.setBackground(new Color(0, 0, 0, 0));
+        // btncarrinho.setBackground(new Color(0, 0, 0, 0));
     }
 
     /**
@@ -62,14 +62,21 @@ public class tela_principal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 40, 40));
 
-        btncarrinho.setBorder(null);
+        btncarrinho.setBackground(new java.awt.Color(255, 0, 0));
+        btncarrinho.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btncarrinho.setText("CARRINHO");
+        btncarrinho.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         btncarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncarrinhoActionPerformed(evt);
             }
         });
-        getContentPane().add(btncarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 590, 290, 50));
+        getContentPane().add(btncarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 590, 270, 50));
 
+        btnalmoco.setBackground(new java.awt.Color(255, 0, 0));
+        btnalmoco.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnalmoco.setText("ALMOÇO");
+        btnalmoco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         btnalmoco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnalmocoActionPerformed(evt);
@@ -77,6 +84,10 @@ public class tela_principal extends javax.swing.JFrame {
         });
         getContentPane().add(btnalmoco, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 590, 280, 50));
 
+        btnlanche.setBackground(new java.awt.Color(255, 0, 0));
+        btnlanche.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        btnlanche.setText("LANCHE");
+        btnlanche.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         btnlanche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnlancheActionPerformed(evt);
@@ -86,7 +97,7 @@ public class tela_principal extends javax.swing.JFrame {
 
         lblfundo.setBackground(new java.awt.Color(204, 0, 0));
         lblfundo.setForeground(new java.awt.Color(255, 0, 0));
-        lblfundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/Sem_titulo_7.jpg"))); // NOI18N
+        lblfundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/e.jpg"))); // NOI18N
         getContentPane().add(lblfundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 730));
 
         setSize(new java.awt.Dimension(1366, 730));
@@ -94,24 +105,25 @@ public class tela_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btncarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncarrinhoActionPerformed
-       System.exit(0);
-    }//GEN-LAST:event_btncarrinhoActionPerformed
+        tela_carrinho carrinho = new tela_carrinho();
+        carrinho.setVisible(true);
+        dispose();    }//GEN-LAST:event_btncarrinhoActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-tela_login_senha voltar = new tela_login_senha();
-voltar.setVisible(true); 
-dispose();
+        tela_login_senha voltar = new tela_login_senha();
+        voltar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnalmocoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnalmocoActionPerformed
-menu_almoco almoco = new menu_almoco();
-almoco.setVisible(true); 
-dispose();
+        menu_almoco almoco = new menu_almoco();
+        almoco.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnalmocoActionPerformed
 
     private void btnlancheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlancheActionPerformed
-menu_lanche lanche = new menu_lanche();
-lanche.setVisible(true); 
+        menu_lanche lanche = new menu_lanche();
+        lanche.setVisible(true);
 dispose();    }//GEN-LAST:event_btnlancheActionPerformed
 
     /**

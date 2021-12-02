@@ -4,84 +4,103 @@
  * and open the template in the editor.
  */
 package lunch_or_net;
+
+import lunch_or_net.tela_principal;
+import lunch_or_net.tela_carrinho;
+import factory.ConnectionFactory;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Sandro V Vieira
  */
 public class menu_almoco extends javax.swing.JFrame {
-        int []valor = new int [30];
+
+    int[] valor = new int[30];
 
     /**
      * Creates new form teste2
      */
     public menu_almoco() {
         initComponents();
-        btnbase.setBackground(new Color(0,0,0,0));
-        btnsaladas.setBackground(new Color(0,0,0,0));
-        btnproteinas.setBackground(new Color(0,0,0,0));
-        btnchurrasco.setBackground(new Color(0,0,0,0));
-        btnbebidas.setBackground(new Color(0,0,0,0));
-        arrozmais.setBackground(new Color(0,0,0,0));
-        arrozmenos.setBackground(new Color(0,0,0,0));
-        txtresul.setBackground(new Color(0,0,0,0));
-        feijaomais.setBackground(new Color(0,0,0,0));
-        feijaomenos.setBackground(new Color(0,0,0,0));
-        txtresul1.setBackground(new Color(0,0,0,0));
-        macarraomais.setBackground(new Color(0,0,0,0));
-        macarraomenos.setBackground(new Color(0,0,0,0));
-        txtresul2.setBackground(new Color(0,0,0,0));
-        alfacemais.setBackground(new Color(0,0,0,0));
-        alfacemenos.setBackground(new Color(0,0,0,0));
-        txtresul3.setBackground(new Color(0,0,0,0));
-        tomatemais.setBackground(new Color(0,0,0,0));
-        tomatemenos.setBackground(new Color(0,0,0,0));
-        txtresul4.setBackground(new Color(0,0,0,0));
-        bifemais.setBackground(new Color(0,0,0,0));
-        bifemenos.setBackground(new Color(0,0,0,0));
-        txtresul5.setBackground(new Color(0,0,0,0));
-        frangomais.setBackground(new Color(0,0,0,0));
-        frangomenos.setBackground(new Color(0,0,0,0));
-        txtresul6.setBackground(new Color(0,0,0,0));
-        ovosmais.setBackground(new Color(0,0,0,0));
-        ovosmenos.setBackground(new Color(0,0,0,0));
-        txtresul7.setBackground(new Color(0,0,0,0));
-        peixemais.setBackground(new Color(0,0,0,0));
-        peixemenos.setBackground(new Color(0,0,0,0));
-        txtresul8.setBackground(new Color(0,0,0,0));
-        efrangomais.setBackground(new Color(0,0,0,0));
-        efrangomenos.setBackground(new Color(0,0,0,0));
-        txtresul9.setBackground(new Color(0,0,0,0));
-        elinguicamais.setBackground(new Color(0,0,0,0));
-        elinguicamenos.setBackground(new Color(0,0,0,0));
-        txtresul10.setBackground(new Color(0,0,0,0));
-        ecarnemais.setBackground(new Color(0,0,0,0));
-        ecarnemenos.setBackground(new Color(0,0,0,0));
-        txtresul11.setBackground(new Color(0,0,0,0));
-        ecoracaomais.setBackground(new Color(0,0,0,0));
-        ecoracaomenos.setBackground(new Color(0,0,0,0));
-        txtresul12.setBackground(new Color(0,0,0,0));
-        ecostelamais.setBackground(new Color(0,0,0,0));
-        ecostelamenos.setBackground(new Color(0,0,0,0));
-        txtresul13.setBackground(new Color(0,0,0,0));
-        ecoxafrangomais.setBackground(new Color(0,0,0,0));
-        ecoxafrangomenos.setBackground(new Color(0,0,0,0));
-        txtresul14.setBackground(new Color(0,0,0,0));
-        sodamais.setBackground(new Color(0,0,0,0));
-        sodamenos.setBackground(new Color(0,0,0,0));
-        txtresul15.setBackground(new Color(0,0,0,0));
-        colamais.setBackground(new Color(0,0,0,0));
-        colamenos.setBackground(new Color(0,0,0,0));
-        txtresul16.setBackground(new Color(0,0,0,0));
-        aguamais.setBackground(new Color(0,0,0,0));
-       aguamenos.setBackground(new Color(0,0,0,0));
-        txtresul17.setBackground(new Color(0,0,0,0));
-        laranjadamais.setBackground(new Color(0,0,0,0));
-        laranjadamenos.setBackground(new Color(0,0,0,0));
-        txtresul18.setBackground(new Color(0,0,0,0));
-        btnvoltar.setBackground(new Color(0,0,0,0));
-        
+        btnbase.setBackground(new Color(0, 0, 0, 0));
+        btnsaladas.setBackground(new Color(0, 0, 0, 0));
+        btnproteinas.setBackground(new Color(0, 0, 0, 0));
+        btnchurrasco.setBackground(new Color(0, 0, 0, 0));
+        btnbebidas.setBackground(new Color(0, 0, 0, 0));
+        arrozmais.setBackground(new Color(0, 0, 0, 0));
+        arrozmenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul.setBackground(new Color(0, 0, 0, 0));
+        feijaomais.setBackground(new Color(0, 0, 0, 0));
+        feijaomenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul1.setBackground(new Color(0, 0, 0, 0));
+        macarraomais.setBackground(new Color(0, 0, 0, 0));
+        macarraomenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul2.setBackground(new Color(0, 0, 0, 0));
+        alfacemais.setBackground(new Color(0, 0, 0, 0));
+        alfacemenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul3.setBackground(new Color(0, 0, 0, 0));
+        tomatemais.setBackground(new Color(0, 0, 0, 0));
+        tomatemenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul4.setBackground(new Color(0, 0, 0, 0));
+        bifemais.setBackground(new Color(0, 0, 0, 0));
+        bifemenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul5.setBackground(new Color(0, 0, 0, 0));
+        frangomais.setBackground(new Color(0, 0, 0, 0));
+        frangomenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul6.setBackground(new Color(0, 0, 0, 0));
+        ovosmais.setBackground(new Color(0, 0, 0, 0));
+        ovosmenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul7.setBackground(new Color(0, 0, 0, 0));
+        peixemais.setBackground(new Color(0, 0, 0, 0));
+        peixemenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul8.setBackground(new Color(0, 0, 0, 0));
+        efrangomais.setBackground(new Color(0, 0, 0, 0));
+        efrangomenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul9.setBackground(new Color(0, 0, 0, 0));
+        elinguicamais.setBackground(new Color(0, 0, 0, 0));
+        elinguicamenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul10.setBackground(new Color(0, 0, 0, 0));
+        ecarnemais.setBackground(new Color(0, 0, 0, 0));
+        ecarnemenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul11.setBackground(new Color(0, 0, 0, 0));
+        ecoracaomais.setBackground(new Color(0, 0, 0, 0));
+        ecoracaomenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul12.setBackground(new Color(0, 0, 0, 0));
+        ecostelamais.setBackground(new Color(0, 0, 0, 0));
+        ecostelamenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul13.setBackground(new Color(0, 0, 0, 0));
+        ecoxafrangomais.setBackground(new Color(0, 0, 0, 0));
+        ecoxafrangomenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul14.setBackground(new Color(0, 0, 0, 0));
+        sodamais.setBackground(new Color(0, 0, 0, 0));
+        sodamenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul15.setBackground(new Color(0, 0, 0, 0));
+        colamais.setBackground(new Color(0, 0, 0, 0));
+        colamenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul16.setBackground(new Color(0, 0, 0, 0));
+        aguamais.setBackground(new Color(0, 0, 0, 0));
+        aguamenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul17.setBackground(new Color(0, 0, 0, 0));
+        laranjadamais.setBackground(new Color(0, 0, 0, 0));
+        laranjadamenos.setBackground(new Color(0, 0, 0, 0));
+        txtresul18.setBackground(new Color(0, 0, 0, 0));
+        btnvoltar.setBackground(new Color(0, 0, 0, 0));
+        btnvolrar2.setBackground(new Color(0, 0, 0, 0));
+        btnvoltar3.setBackground(new Color(0, 0, 0, 0));
+        btnvoltar4.setBackground(new Color(0, 0, 0, 0));
+        btnvoltar5.setBackground(new Color(0, 0, 0, 0));
+        btnsalvar1.setBackground(new Color(0, 0, 0, 0));
+        btnsalvar2.setBackground(new Color(0, 0, 0, 0));
+        btnsalvar3.setBackground(new Color(0, 0, 0, 0));
+        btnsalvar4.setBackground(new Color(0, 0, 0, 0));
+        btnsalvar5.setBackground(new Color(0, 0, 0, 0));
+        btnfinalizar1.setBackground(new Color(0, 0, 0, 0));
+
     }
 
     /**
@@ -93,6 +112,7 @@ public class menu_almoco extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnfinalizar1 = new javax.swing.JButton();
         lblfundo = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         acompanhamentos = new javax.swing.JPanel();
@@ -106,6 +126,7 @@ public class menu_almoco extends javax.swing.JFrame {
         macarraomais = new javax.swing.JButton();
         txtresul2 = new javax.swing.JTextField();
         btnvoltar = new javax.swing.JButton();
+        btnsalvar1 = new javax.swing.JButton();
         lblfundobase = new javax.swing.JLabel();
         saladas = new javax.swing.JPanel();
         alfacemenos = new javax.swing.JButton();
@@ -114,6 +135,8 @@ public class menu_almoco extends javax.swing.JFrame {
         tomatemais = new javax.swing.JButton();
         tomatemenos = new javax.swing.JButton();
         txtresul4 = new javax.swing.JTextField();
+        btnsalvar2 = new javax.swing.JButton();
+        btnvolrar2 = new javax.swing.JButton();
         lblfundosaladas = new javax.swing.JLabel();
         guarnicoes = new javax.swing.JPanel();
         frangomenos = new javax.swing.JButton();
@@ -128,6 +151,8 @@ public class menu_almoco extends javax.swing.JFrame {
         ovosmais = new javax.swing.JButton();
         ovosmenos = new javax.swing.JButton();
         txtresul6 = new javax.swing.JTextField();
+        btnsalvar3 = new javax.swing.JButton();
+        btnvoltar3 = new javax.swing.JButton();
         lblfundoproteinas = new javax.swing.JLabel();
         churrascos = new javax.swing.JPanel();
         elinguicamenos = new javax.swing.JButton();
@@ -148,6 +173,8 @@ public class menu_almoco extends javax.swing.JFrame {
         ecoxafrangomenos = new javax.swing.JButton();
         ecoxafrangomais = new javax.swing.JButton();
         txtresul14 = new javax.swing.JTextField();
+        btnsalvar4 = new javax.swing.JButton();
+        btnvoltar4 = new javax.swing.JButton();
         lblfundobebidas = new javax.swing.JLabel();
         bebidas = new javax.swing.JPanel();
         sodamenos = new javax.swing.JButton();
@@ -162,6 +189,8 @@ public class menu_almoco extends javax.swing.JFrame {
         laranjadamenos = new javax.swing.JButton();
         laranjadamais = new javax.swing.JButton();
         txtresul18 = new javax.swing.JTextField();
+        btnsalvar5 = new javax.swing.JButton();
+        btnvoltar5 = new javax.swing.JButton();
         lblchurrasco = new javax.swing.JLabel();
         btnsaladas = new javax.swing.JButton();
         btnbase = new javax.swing.JButton();
@@ -172,6 +201,14 @@ public class menu_almoco extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnfinalizar1.setBorder(null);
+        btnfinalizar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnfinalizar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnfinalizar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 190, 40));
 
         lblfundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/1.png"))); // NOI18N
         getContentPane().add(lblfundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 280, 750));
@@ -194,6 +231,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul.setText("0");
         txtresul.setBorder(null);
         txtresul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,6 +256,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul1.setText("0");
         txtresul1.setBorder(null);
         txtresul1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,6 +281,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul2.setText("0");
         txtresul2.setBorder(null);
         txtresul2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -255,9 +295,17 @@ public class menu_almoco extends javax.swing.JFrame {
                 btnvoltarActionPerformed(evt);
             }
         });
-        acompanhamentos.add(btnvoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 20, 90, 40));
+        acompanhamentos.add(btnvoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, 100, 40));
 
-        lblfundobase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lunch_or_net/acompanhamento_almoco.jpg"))); // NOI18N
+        btnsalvar1.setBorder(null);
+        btnsalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalvar1ActionPerformed(evt);
+            }
+        });
+        acompanhamentos.add(btnsalvar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 670, 100, 40));
+
+        lblfundobase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS2/acompanhamento_almoco.jpg"))); // NOI18N
         acompanhamentos.add(lblfundobase, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 1160, 750));
 
         jTabbedPane1.addTab("tab1", acompanhamentos);
@@ -280,6 +328,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul3.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul3.setText("0");
         txtresul3.setBorder(null);
         txtresul3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,6 +354,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul4.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul4.setText("0");
         txtresul4.setBorder(null);
         txtresul4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,7 +363,23 @@ public class menu_almoco extends javax.swing.JFrame {
         });
         saladas.add(txtresul4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 40, 30));
 
-        lblfundosaladas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lunch_or_net/salada_almoco.jpg"))); // NOI18N
+        btnsalvar2.setBorder(null);
+        btnsalvar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalvar2ActionPerformed(evt);
+            }
+        });
+        saladas.add(btnsalvar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 670, 100, 40));
+
+        btnvolrar2.setBorder(null);
+        btnvolrar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvolrar2ActionPerformed(evt);
+            }
+        });
+        saladas.add(btnvolrar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 90, 40));
+
+        lblfundosaladas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS2/salada_almoco.jpg"))); // NOI18N
         saladas.add(lblfundosaladas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1140, 730));
 
         jTabbedPane1.addTab("tab2", saladas);
@@ -336,6 +402,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul5.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul5.setText("0");
         txtresul5.setBorder(null);
         guarnicoes.add(txtresul5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 30, 20));
 
@@ -355,6 +422,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul8.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul8.setText("0");
         txtresul8.setBorder(null);
         txtresul8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -379,6 +447,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul7.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul7.setText("0");
         txtresul7.setBorder(null);
         guarnicoes.add(txtresul7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 420, 30, 20));
 
@@ -398,10 +467,28 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul6.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul6.setText("0");
         txtresul6.setBorder(null);
         guarnicoes.add(txtresul6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 30, 20));
 
-        lblfundoproteinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lunch_or_net/guarnicoes_almoco.jpg"))); // NOI18N
+        btnsalvar3.setBorder(null);
+        btnsalvar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalvar3ActionPerformed(evt);
+            }
+        });
+        guarnicoes.add(btnsalvar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 670, 110, 40));
+
+        btnvoltar3.setBorder(null);
+        btnvoltar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvoltar3ActionPerformed(evt);
+            }
+        });
+        guarnicoes.add(btnvoltar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, 90, 30));
+
+        lblfundoproteinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS2/guarnicoes_almoco.jpg"))); // NOI18N
+        lblfundoproteinas.setText("0");
         guarnicoes.add(lblfundoproteinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1140, 730));
 
         jTabbedPane1.addTab("tab3", guarnicoes);
@@ -424,6 +511,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul9.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul9.setText("0");
         txtresul9.setBorder(null);
         txtresul9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -448,6 +536,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul10.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul10.setText("0");
         txtresul10.setBorder(null);
         txtresul10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -472,6 +561,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul11.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul11.setText("0");
         txtresul11.setBorder(null);
         txtresul11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -496,6 +586,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul12.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul12.setText("0");
         txtresul12.setBorder(null);
         churrascos.add(txtresul12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 40, 30));
 
@@ -515,6 +606,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul13.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul13.setText("0");
         txtresul13.setBorder(null);
         txtresul13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -539,6 +631,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul14.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul14.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul14.setText("0");
         txtresul14.setBorder(null);
         txtresul14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -547,7 +640,23 @@ public class menu_almoco extends javax.swing.JFrame {
         });
         churrascos.add(txtresul14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 630, 20, 30));
 
-        lblfundobebidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lunch_or_net/churrasco_almoco.jpg"))); // NOI18N
+        btnsalvar4.setBorder(null);
+        btnsalvar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalvar4ActionPerformed(evt);
+            }
+        });
+        churrascos.add(btnsalvar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 670, 100, 40));
+
+        btnvoltar4.setBorder(null);
+        btnvoltar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvoltar4ActionPerformed(evt);
+            }
+        });
+        churrascos.add(btnvoltar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, 100, 30));
+
+        lblfundobebidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS2/churrasco_almoco.jpg"))); // NOI18N
         churrascos.add(lblfundobebidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1140, 730));
 
         jTabbedPane1.addTab("tab5", churrascos);
@@ -570,6 +679,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul15.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul15.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul15.setText("0");
         txtresul15.setBorder(null);
         bebidas.add(txtresul15, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 170, 40, 40));
 
@@ -589,6 +699,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul16.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul16.setText("0");
         txtresul16.setBorder(null);
         txtresul16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -613,6 +724,7 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul17.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul17.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul17.setText("0");
         txtresul17.setBorder(null);
         bebidas.add(txtresul17, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 100, 30));
 
@@ -632,10 +744,27 @@ public class menu_almoco extends javax.swing.JFrame {
 
         txtresul18.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         txtresul18.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtresul18.setText("0");
         txtresul18.setBorder(null);
         bebidas.add(txtresul18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 40, 40));
 
-        lblchurrasco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lunch_or_net/lanche1.jpg"))); // NOI18N
+        btnsalvar5.setBorder(null);
+        btnsalvar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsalvar5ActionPerformed(evt);
+            }
+        });
+        bebidas.add(btnsalvar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 670, 100, 40));
+
+        btnvoltar5.setBorder(null);
+        btnvoltar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvoltar5ActionPerformed(evt);
+            }
+        });
+        bebidas.add(btnvoltar5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, 80, 30));
+
+        lblchurrasco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS2/lanche1.jpg"))); // NOI18N
         bebidas.add(lblchurrasco, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1140, 730));
 
         jTabbedPane1.addTab("tab4", bebidas);
@@ -687,30 +816,30 @@ public class menu_almoco extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnsaladasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaladasActionPerformed
-jTabbedPane1.setSelectedIndex(1);
+        jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_btnsaladasActionPerformed
 
     private void btnbaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbaseActionPerformed
-jTabbedPane1.setSelectedIndex(0);       
+        jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnbaseActionPerformed
 
     private void btnproteinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproteinasActionPerformed
-jTabbedPane1.setSelectedIndex(2);
+        jTabbedPane1.setSelectedIndex(2);
            }//GEN-LAST:event_btnproteinasActionPerformed
 
     private void btnchurrascoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnchurrascoActionPerformed
-jTabbedPane1.setSelectedIndex(3);
+        jTabbedPane1.setSelectedIndex(3);
           }//GEN-LAST:event_btnchurrascoActionPerformed
 
     private void btnbebidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbebidasActionPerformed
 jTabbedPane1.setSelectedIndex(4);          }//GEN-LAST:event_btnbebidasActionPerformed
 
     private void arrozmaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrozmaisActionPerformed
-txtresul.setText(String.valueOf(++valor[0]));
+        txtresul.setText(String.valueOf(++valor[0]));
     }//GEN-LAST:event_arrozmaisActionPerformed
 
     private void arrozmenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrozmenosActionPerformed
-txtresul.setText(String.valueOf(--valor[0]));
+        txtresul.setText(String.valueOf(--valor[0]));
     }//GEN-LAST:event_arrozmenosActionPerformed
 
     private void txtresulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtresulActionPerformed
@@ -735,14 +864,14 @@ txtresul2.setText(String.valueOf(++valor[2]));         }//GEN-LAST:event_macarra
     }//GEN-LAST:event_txtresul2ActionPerformed
 
     private void alfacemenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alfacemenosActionPerformed
-txtresul3.setText(String.valueOf(--valor[3]));                                                 
+        txtresul3.setText(String.valueOf(--valor[3]));
     }//GEN-LAST:event_alfacemenosActionPerformed
 
     private void tomatemenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomatemenosActionPerformed
 txtresul4.setText(String.valueOf(--valor[4]));    }//GEN-LAST:event_tomatemenosActionPerformed
 
     private void alfacemaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alfacemaisActionPerformed
-txtresul3.setText(String.valueOf(++valor[3]));                                                
+        txtresul3.setText(String.valueOf(++valor[3]));
     }//GEN-LAST:event_alfacemaisActionPerformed
 
     private void tomatemaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tomatemaisActionPerformed
@@ -764,7 +893,7 @@ txtresul6.setText(String.valueOf(--valor[6]));     }//GEN-LAST:event_ovosmenosAc
 txtresul7.setText(String.valueOf(++valor[7]));     }//GEN-LAST:event_peixemaisActionPerformed
 
     private void peixemenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peixemenosActionPerformed
-txtresul7.setText(String.valueOf(--valor[7]));       
+        txtresul7.setText(String.valueOf(--valor[7]));
     }//GEN-LAST:event_peixemenosActionPerformed
 
     private void bifemaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bifemaisActionPerformed
@@ -849,9 +978,9 @@ txtresul18.setText(String.valueOf(++valor[18]));     }//GEN-LAST:event_laranjada
 txtresul18.setText(String.valueOf(--valor[18]));     }//GEN-LAST:event_laranjadamenosActionPerformed
 
     private void btnvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltarActionPerformed
-tela_principal principal = new tela_principal();
-principal.setVisible(true);
-dispose();
+        tela_principal principal = new tela_principal();
+        principal.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnvoltarActionPerformed
 
     private void txtresul3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtresul3ActionPerformed
@@ -869,6 +998,197 @@ dispose();
     private void txtresul10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtresul10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtresul10ActionPerformed
+
+    private void btnsalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalvar1ActionPerformed
+        try {
+            Connection connection = new ConnectionFactory().getConnection();
+            String sql = "UPDATE cprodutos\n"
+                    + "   SET quantidade = CASE id\n"
+                    + "   WHEN 32 THEN ?\n"
+                    + "   WHEN 33 THEN ?\n"
+                    + "   WHEN 34 THEN ?\n"
+                    + "   ELSE quantidade END WHERE id IN(32, 33, 34)";
+
+                PreparedStatement stmt = connection.prepareStatement(sql);
+              
+                stmt.setString(1, txtresul.getText());
+                stmt.setString(2, txtresul1.getText());
+                stmt.setString(3, txtresul2.getText());
+                
+                /*
+                int arroz = Integer.parseInt(txtresul.getText());
+               System.out.println(arroz);
+               int feijao;
+               int macarrao;                          
+               
+                System.out.println(txtresul1.getText());
+                System.out.println(txtresul2.getText());
+                System.out.println(txtresul.getText());
+                */
+                
+                stmt.execute();
+                stmt.close();
+                connection.close();
+
+                JOptionPane.showMessageDialog(null, "salvo com sucesso!");
+                jTabbedPane1.setSelectedIndex(1);
+      
+
+            } catch (SQLException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+
+            
+        }
+    }//GEN-LAST:event_btnsalvar1ActionPerformed
+
+    private void btnsalvar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalvar3ActionPerformed
+ try {
+            Connection connection = new ConnectionFactory().getConnection();
+            String sql = "UPDATE cprodutos\n"
+                    + "   SET quantidade = CASE id\n"
+                    + "   WHEN 35 THEN ?\n"
+                    + "   WHEN 36 THEN ?\n"
+                    + "   WHEN 37 THEN ?\n"
+                    + "   WHEN 38 THEN ?\n"
+                    + "   ELSE quantidade END WHERE id IN(35,36,37,38)";
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setString(1, txtresul5.getText());
+                stmt.setString(2, txtresul6.getText());
+                stmt.setString(3, txtresul7.getText());
+                stmt.setString(4, txtresul8.getText());
+
+                stmt.execute();
+                stmt.close();
+                connection.close();
+
+                JOptionPane.showMessageDialog(null, "salvo com sucesso!");
+                jTabbedPane1.setSelectedIndex(3);
+      
+
+            } catch (SQLException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+
+            
+        }    }//GEN-LAST:event_btnsalvar3ActionPerformed
+
+    private void btnsalvar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalvar4ActionPerformed
+ try {
+            Connection connection = new ConnectionFactory().getConnection();
+            String sql = "UPDATE cprodutos\n"
+                    + "   SET quantidade = CASE id\n"
+                    + "   WHEN 26 THEN ?\n"
+                    + "   WHEN 27 THEN ?\n"
+                    + "   WHEN 28 THEN ?\n"
+                    + "   WHEN 29 THEN ?\n"
+                    + "   WHEN 30 THEN ?\n"
+                    + "   WHEN 31 THEN ?\n"
+                    + "   ELSE quantidade END WHERE id IN(26,27,28,29,30,31)";
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setString(1, txtresul9.getText());
+                stmt.setString(2, txtresul10.getText());
+                stmt.setString(3, txtresul11.getText());
+                stmt.setString(4, txtresul12.getText());
+                stmt.setString(5, txtresul13.getText());
+                stmt.setString(6, txtresul14.getText());
+
+                stmt.execute();
+                stmt.close();
+                connection.close();
+
+                JOptionPane.showMessageDialog(null, "salvo com sucesso!");
+                jTabbedPane1.setSelectedIndex(4);
+      
+
+            } catch (SQLException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+
+            
+        }    }//GEN-LAST:event_btnsalvar4ActionPerformed
+
+    private void btnsalvar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalvar5ActionPerformed
+try {
+            Connection connection = new ConnectionFactory().getConnection();
+            String sql = "UPDATE cprodutos\n"
+                    + "   SET quantidade = CASE id\n"
+                    + "   WHEN 49 THEN ?\n"
+                    + "   WHEN 50 THEN ?\n"
+                    + "   WHEN 51 THEN ?\n"
+                    + "   WHEN 52 THEN ?\n"
+                    + "   ELSE quantidade END WHERE id IN(49,50,51,52)";
+                PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setString(1, txtresul15.getText());
+                stmt.setString(2, txtresul16.getText());
+                stmt.setString(3, txtresul17.getText());
+                stmt.setString(4, txtresul18.getText());
+
+
+                stmt.execute();
+                stmt.close();
+                connection.close();
+
+                JOptionPane.showMessageDialog(null, "salvo com sucesso!");
+      
+
+            } catch (SQLException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+
+            
+        }    }//GEN-LAST:event_btnsalvar5ActionPerformed
+
+    private void btnfinalizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnfinalizar1ActionPerformed
+
+        tela_carrinho carrinho = new tela_carrinho();
+carrinho.setVisible(true);
+dispose();
+    }//GEN-LAST:event_btnfinalizar1ActionPerformed
+
+    private void btnsalvar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalvar2ActionPerformed
+try {
+            Connection connection = new ConnectionFactory().getConnection();
+            String sql = "UPDATE cprodutos\n"
+                    + "   SET quantidade = CASE id\n"
+                    + "   WHEN 24 THEN ?\n"
+                    + "   WHEN 25 THEN ?\n"
+                    + "   ELSE quantidade END WHERE id IN(24,25)";
+               
+              PreparedStatement stmt = connection.prepareStatement(sql);
+                stmt.setString(1, txtresul3.getText());
+                stmt.setString(2, txtresul4.getText());
+
+
+                stmt.execute();
+                stmt.close();
+                connection.close();
+
+                JOptionPane.showMessageDialog(null, "salvo com sucesso!");
+                jTabbedPane1.setSelectedIndex(2);
+
+            } catch (SQLException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+
+            
+        }     }//GEN-LAST:event_btnsalvar2ActionPerformed
+
+    private void btnvoltar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltar5ActionPerformed
+jTabbedPane1.setSelectedIndex(3);
+    }//GEN-LAST:event_btnvoltar5ActionPerformed
+
+    private void btnvoltar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltar4ActionPerformed
+jTabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_btnvoltar4ActionPerformed
+
+    private void btnvoltar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltar3ActionPerformed
+jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnvoltar3ActionPerformed
+
+    private void btnvolrar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolrar2ActionPerformed
+jTabbedPane1.setSelectedIndex(0);
+    }//GEN-LAST:event_btnvolrar2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -926,9 +1246,19 @@ dispose();
     private javax.swing.JButton btnbase;
     private javax.swing.JButton btnbebidas;
     private javax.swing.JButton btnchurrasco;
+    private javax.swing.JButton btnfinalizar1;
     private javax.swing.JButton btnproteinas;
     private javax.swing.JButton btnsaladas;
+    private javax.swing.JButton btnsalvar1;
+    private javax.swing.JButton btnsalvar2;
+    private javax.swing.JButton btnsalvar3;
+    private javax.swing.JButton btnsalvar4;
+    private javax.swing.JButton btnsalvar5;
+    private javax.swing.JButton btnvolrar2;
     private javax.swing.JButton btnvoltar;
+    private javax.swing.JButton btnvoltar3;
+    private javax.swing.JButton btnvoltar4;
+    private javax.swing.JButton btnvoltar5;
     private javax.swing.JPanel churrascos;
     private javax.swing.JButton colamais;
     private javax.swing.JButton colamenos;

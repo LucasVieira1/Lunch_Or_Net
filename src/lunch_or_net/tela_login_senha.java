@@ -5,7 +5,8 @@
  */
 package lunch_or_net;
 
-
+import lunch_or_net.tela_principal;
+import lunch_or_net.tela_cadastro;
 import factory.ConnectionFactory;
 import java.awt.Color;
 import java.sql.Connection;
@@ -26,12 +27,13 @@ public class tela_login_senha extends javax.swing.JFrame {
      */
     public tela_login_senha() {
         initComponents();
-        txtusuario.setBackground(new Color(0,0,0,0));
-        txtsenha.setBackground(new Color(0,0,0,0));
-        btnentrar.setBackground(new Color(0,0,0,0));
-        btncadastrar.setBackground(new Color(0,0,0,0));
-        btnsair.setBackground(new Color(0,0,0,0));
+        txtusuario.setBackground(new Color(0, 0, 0, 0));
+        txtsenha.setBackground(new Color(0, 0, 0, 0));
+        btnentrar.setBackground(new Color(0, 0, 0, 0));
+        btncadastrar.setBackground(new Color(0, 0, 0, 0));
+        btnsair.setBackground(new Color(0, 0, 0, 0));
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -104,7 +106,7 @@ public class tela_login_senha extends javax.swing.JFrame {
         lblfundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/Login_bonito.png"))); // NOI18N
         getContentPane().add(lblfundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
 
-        lblfundoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/AMAMOS_A_IMAGEM_DO_AGEO.jpg"))); // NOI18N
+        lblfundoo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGENS/AMAMOS_A_IMAGEM_DO_AGEO.png"))); // NOI18N
         getContentPane().add(lblfundoo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 730));
 
         setSize(new java.awt.Dimension(1366, 730));
@@ -113,33 +115,34 @@ public class tela_login_senha extends javax.swing.JFrame {
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
         try {
-        Connection connection = new ConnectionFactory().getConnection();    //puxar conexão co m banco de dados
-        String sql = "select * from cadastro where usuario = ? and senha = ?";    //comandos no mysql
-        PreparedStatement stmt = connection.prepareCall(sql);   //preparação dos dados para enviar para a conexao, devido a variavel sql
-        stmt.setString(1, txtusuario.getText());   //quais as informações vou mandar? 1 = campo1(usuario)
-        stmt.setString(2, new String(txtsenha.getPassword()));    //quais as informações vou mandar? 2 = campo2(senha)
-        ResultSet rs = stmt.executeQuery();    //existe a informação no banco ou não?
-                                               // executeQuery = executa a conulta no banco
-                                               //stmt prepara a informação
-        if(rs.next()){  //se tiver a informação no banco
-       tela_principal tela = new tela_principal();
-       tela.setVisible(true);
-       dispose();
-        }
-        else if ((txtusuario.getText().isEmpty()) ||  (txtsenha.getText().isEmpty())) {
-    JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
-}
-     
-        else{
-        
-        JOptionPane.showMessageDialog(null, "Usúário ou senha inválidos!\nEfetue o cadastro ou verifique novamente suas informações!");
-        }
-        txtsenha.setText("");
-        stmt.close();
-        connection.close();
+            Connection connection = new ConnectionFactory().getConnection();    //puxar conexão co m banco de dados
+            String sql = "select * from cadastro where usuario = ? and senha = ?";    //comandos no mysql
+            PreparedStatement stmt = connection.prepareCall(sql);   //preparação dos dados para enviar para a conexao, devido a variavel sql
+            stmt.setString(1, txtusuario.getText());   //quais as informações vou mandar? 1 = campo1(usuario)
+            stmt.setString(2, new String(txtsenha.getPassword()));    //quais as informações vou mandar? 2 = campo2(senha)
+            ResultSet rs = stmt.executeQuery();    //existe a informação no banco ou não?
+            // executeQuery = executa a conulta no banco
+            //stmt prepara a informação
+            if (rs.next()) {  //se tiver a informação no banco
+                tela_principal tela = new tela_principal();
+                tela.setVisible(true);
+                dispose();
+            } else if ((txtusuario.getText().isEmpty()) || (txtsenha.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
+            } else if (txtusuario.getText().equalsIgnoreCase("admin") && txtsenha.getText().equals("admin")) {
+                tela_admin admin = new tela_admin();   //chamar e criar variavel tela
+                admin.setVisible(true);    //ativar variavel tela
+                dispose(); //fechar tela anterior
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Usúário ou senha inválidos!\nEfetue o cadastro ou verifique novamente suas informações!");
+            }
+            txtsenha.setText("");
+            stmt.close();
+            connection.close();
         } catch (Exception e) {
         }
- 
+
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void btnsairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsairActionPerformed
@@ -149,10 +152,9 @@ public class tela_login_senha extends javax.swing.JFrame {
 
     private void btncadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadastrarActionPerformed
 
-
-tela_cadastro cadastro = new tela_cadastro();
-cadastro.setVisible(true);
-dispose();
+        tela_cadastro cadastro = new tela_cadastro();
+        cadastro.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btncadastrarActionPerformed
 
     private void txtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenhaActionPerformed
@@ -189,7 +191,7 @@ dispose();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 new tela_login_senha().setVisible(true);
             }
         });

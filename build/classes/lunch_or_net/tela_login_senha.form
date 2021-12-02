@@ -153,7 +153,7 @@
     <Component class="javax.swing.JLabel" name="lblfundoo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/IMAGENS/AMAMOS_A_IMAGEM_DO_AGEO.jpg"/>
+          <Image iconType="3" name="/IMAGENS/AMAMOS_A_IMAGEM_DO_AGEO.png"/>
         </Property>
       </Properties>
       <Constraints>

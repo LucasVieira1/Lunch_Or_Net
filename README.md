@@ -15,6 +15,14 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 *  Java
 *  SQL
 
+## :question: Como acesso o protótipo?
+
+*  Por meio do botão “code” baixe a versão zip, e o Script sql disponibilizado;
+*  Descompacte os arquivos;
+*  Certifique-se de que os drivers são compatíveis entre o banco e a IDE (indicamos      NetBeans e MySQL);
+*  Coloque os dados do seu banco de dados no arquivo “ConectionFactory”;
+*  Para melhor uso, cadastre os produtos que já estão no frontend.
+
 ## 👨‍💻 Integrantes da Equipe 
 
 * **Luiz Agêo** - *Scrum Master* - https://github.com/AgeoBrito
@@ -24,11 +32,4 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 * **Samuel Santos** - *Implementador* - https://github.com/Sam-S-Pina
 * **Victor Augusto** - *Analítico* - https://github.com/vict0raugst
 
-## :question: Como acesso o protótipo?
-
-*  Por meio do botão “code” baixe a versão zip, e o Script sql disponibilizado;
-*  Descompacte os arquivos;
-*  Certifique-se de que os drivers são compatíveis entre o banco e a IDE (indicamos      NetBeans e MySQL);
-*  Coloque os dados do seu banco de dados no arquivo “ConectionFactory”;
-*  Para melhor uso, cadastre os produtos que já estão no frontend.
 

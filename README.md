@@ -15,6 +15,9 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 *  Java
 *  SQL
 
+## 📺 Vídeo do Projeto
+* <a href="https://www.linkedin.com/feed/update/urn:li:activity:6873760447401730049/" title="Vídeo">Clique Aqui</a>
+
 ## :question: Como acesso o protótipo?
 
 *  Por meio do botão “code” baixe a versão zip, e o Script sql disponibilizado;
@@ -32,5 +35,4 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 * **Samuel Santos** - *Implementador* - https://github.com/Sam-S-Pina
 * **Victor Augusto** - *Analítico* - https://github.com/vict0raugst
 
-## 📺 Vídeo do Projeto
-* <a href="https://www.linkedin.com/feed/update/urn:li:activity:6873760447401730049/" title="Vídeo">Clique Aqui</a>
+

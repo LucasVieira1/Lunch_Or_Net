@@ -30,8 +30,8 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 
 * **Luiz Agêo** - *Scrum Master* - https://github.com/AgeoBrito
 * **Jackeline Lemos** - *Product Owner* - https://github.com/JackelineLemos
-* **Lucas Vieira** - *Testador* - https://github.com/LucasVieira1
-* **Mateus de Queiroz** - *Projetista* - https://github.com/MQuerioz
-* **Samuel Santos** - *Implementador* - https://github.com/Sam-S-Pina
+* **Lucas Vieira** - *Dev* - https://github.com/LucasVieira1
+* **Mateus de Queiroz** - *Testador* - https://github.com/MQuerioz
+* **Samuel Santos** - *Dev* - https://github.com/Sam-S-Pina
 
 

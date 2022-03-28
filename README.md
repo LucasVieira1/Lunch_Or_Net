@@ -33,6 +33,5 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 * **Lucas Vieira** - *Testador* - https://github.com/LucasVieira1
 * **Mateus de Queiroz** - *Projetista* - https://github.com/MQuerioz
 * **Samuel Santos** - *Implementador* - https://github.com/Sam-S-Pina
-* **Victor Augusto** - *Analítico* - https://github.com/vict0raugst
 
 

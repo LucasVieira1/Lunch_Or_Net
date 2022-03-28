@@ -31,3 +31,6 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 * **Mateus de Queiroz** - *Projetista* - https://github.com/MQuerioz
 * **Samuel Santos** - *Implementador* - https://github.com/Sam-S-Pina
 * **Victor Augusto** - *Analítico* - https://github.com/vict0raugst
+
+## 📺 Vídeo do Projeto
+* <a href="https://www.linkedin.com/feed/update/urn:li:activity:6873760447401730049/" title="Vídeo">Clique Aqui</a>

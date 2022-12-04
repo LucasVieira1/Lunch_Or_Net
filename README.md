@@ -16,15 +16,14 @@ Para clientes interessados em self-service, que desejam servir-se sem sair de su
 *  SQL
 
 ## 📺 Vídeo do Projeto
-* <a href="https://www.youtube.com/watch?v=mjX6tkBLRvk/" title="Vídeo">Clique Aqui</a>
-
+* <a href="https://www.linkedin.com/feed/update/urn:li:activity:6873760447401730049/" title="Vídeo">Clique Aqui</a>
 ## :question: Como acesso o protótipo?
 
 *  Por meio do botão “code” baixe a versão zip, e o Script sql disponibilizado;
 *  Descompacte os arquivos;
-*  Certifique-se de que os drivers são compatíveis entre o banco e a IDE (indicamos      VScode e MySQL);
-*  Coloque os dados do seu banco de dados no arquivo “conexao/usuario.php”;
-*  Para rodar local na sua maquina, baixe o "Xamp" e configure seu localhost.
+*  Certifique-se de que os drivers são compatíveis entre o banco e a IDE (indicamos      NetBeans e MySQL);
+*  Coloque os dados do seu banco de dados no arquivo “ConectionFactory”;
+*  Para melhor uso, cadastre os produtos que já estão no frontend.
 
 ## 👨‍💻 Integrantes da Equipe 
 
